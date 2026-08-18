@@ -19,19 +19,19 @@
 ### 从 GitHub 安装（推荐）
 
 ```bash
-dsh plugin --profile web add git@github.com:yangshen830-eng/dsh-code-editor.git
+dsh plugin --profile web add git@github.com:yangshen830-eng/dsh-editor.git
 ```
 
 ### 从本地目录安装
 
 ```bash
-dsh plugin --profile web add file:/path/to/dsh-code-editor
+dsh plugin --profile web add file:/path/to/dsh-editor
 ```
 
 ### 从 npm 安装（发布后）
 
 ```bash
-dsh plugin --profile web add dsh-code-editor
+dsh plugin --profile web add dsh-editor
 ```
 
 安装后**重启 DSH**（`dsh web --profile web`）即可在会话主区看到「文件」标签页。
@@ -41,7 +41,7 @@ dsh plugin --profile web add dsh-code-editor
 ## 目录结构
 
 ```
-dsh-code-editor/
+dsh-editor/
 ├── lib/
 │   ├── index.js           # Host 端（Node 进程：fs/git/subprocess 搜索后端 + /editor RPC）
 │   └── client.js          # Client 端（浏览器：UI、Monaco、搜索、预览，经 /editor RPC 调 Host）

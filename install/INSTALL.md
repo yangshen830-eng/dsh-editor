@@ -9,7 +9,7 @@
 1. 在 DSH 会话中，让 Agent 读取两个源码文件：
 
 ```
-请读 /home/ys/dsh-code-editor/src/host.js 和 src/client.js，
+请读 /home/ys/dsh-editor/src/host.js 和 src/client.js，
 用 cordis_define 定义一个名为「DSH Code Editor」的插件：
   plugin: { kind: 'new', idPrefix: 'editr' }
   code: { host: <host.js 内容>, client: <client.js 内容> }
