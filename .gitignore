@@ -1,0 +1,12 @@
+# 依赖与构建产物
+node_modules/
+lib/
+dist/
+
+# 日志与系统文件
+*.log
+.DS_Store
+
+# 编辑器/IDE
+.idea/
+.vscode/

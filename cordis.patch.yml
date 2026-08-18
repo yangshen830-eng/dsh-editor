@@ -1,0 +1,16 @@
+# dsh-code-editor bundle patch（正式 npm 包迁移模板）
+#
+# 当本插件以 npm 包形式通过官方 CLI 安装时：
+#
+#   dsh plugin --profile <name> add dsh-code-editor@<version>
+#
+# 命令会依据 package.json 里的 dsh.profile.bundles 与 dsh.bundle.patch
+# 声明，把下面这一行 insert 进 profile 的 composition，从而挂载 Host 端。
+#
+# 当前 src/host.js 仍是动态插件形态（harness.handle），迁移到正式包时
+# 需先把 Host 半重写为标准 Cordis 插件（ctx + Services + defineTool），
+# 再把 Client 半放到 lib/client.js 并通过 dsh.client.inject 声明。详见 install/INSTALL.md。
+
+- insert:
+    - id: dsh-code-editor
+      name: 'dsh-code-editor'
