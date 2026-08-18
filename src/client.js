@@ -1,4 +1,4 @@
-// DSH Code Editor — Client half (browser).
+// DSH Editor — Client half (browser).
 //
 // This file is the `code.client` FUNCTION BODY of a DSH dynamic Cordis Plugin.
 // Install by passing it to cordis_define as `code.client`, together with

@@ -1,4 +1,4 @@
-# DSH Code Editor
+# DSH Editor
 
 一个运行在 [DeepSeek Harness (DSH)](https://github.com/deepseek-ai/deepseek-harness) 里的 VS Code 风格代码编辑器插件：在会话主区新增一个「文件」标签页，提供文件树、Monaco 编辑器、跨文件搜索/替换、Markdown 预览、Git 状态等能力。
 

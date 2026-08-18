@@ -10,7 +10,7 @@
 
 ```
 请读 /home/ys/dsh-editor/src/host.js 和 src/client.js，
-用 cordis_define 定义一个名为「DSH Code Editor」的插件：
+用 cordis_define 定义一个名为「DSH Editor」的插件：
   plugin: { kind: 'new', idPrefix: 'editr' }
   code: { host: <host.js 内容>, client: <client.js 内容> }
 然后 cordis_run 激活它（mode: 'run'）。

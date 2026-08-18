@@ -1,4 +1,4 @@
-// DSH Code Editor — Host half (Node process).
+// DSH Editor — Host half (Node process).
 //
 // This file is the `code.host` FUNCTION BODY of a DSH dynamic Cordis Plugin.
 // Install by passing it to cordis_define as `code.host`, together with
