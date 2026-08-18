@@ -1,6 +1,6 @@
 {
   "name": "dsh-editor",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "DSH web plugin: a VS Code-style code editor view (file tree, Monaco, ripgrep search/replace, Markdown preview, git diff).",
   "type": "module",
   "repository": {
