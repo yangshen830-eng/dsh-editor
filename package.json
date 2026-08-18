@@ -1,8 +1,15 @@
 {
   "name": "dsh-code-editor",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "DSH web plugin: a VS Code-style code editor view (file tree, Monaco, ripgrep search/replace, Markdown preview, git diff).",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yangshen830-eng/dsh-code-editor"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "lib/index.js",
   "exports": {
     ".": {
@@ -23,10 +30,9 @@
     "client": {
       "inject": [
         "@deepseek-ai/dsh-client-runtime",
-        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-theme",
         "@deepseek-ai/dsh-client-ui-conversation",
-        "@deepseek-ai/dsh-client-ui-settings",
-        "@deepseek-ai/dsh-client-web-react"
+        "@deepseek-ai/dsh-client-ui-settings"
       ],
       "platform": "web"
     }
@@ -40,11 +46,15 @@
   ],
   "license": "MIT",
   "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "@deepseek-ai/dsh-client-runtime": "^0.1.0-rc.6",
+    "@deepseek-ai/dsh-client-ui-theme": "^0.1.0-rc.6",
     "@deepseek-ai/dsh-client-ui-conversation": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-client-ui-slots": "^0.1.0-rc.6",
-    "@deepseek-ai/dsh-tools": "^0.1.0-rc.6"
+    "@deepseek-ai/dsh-client-ui-settings": "^0.1.0-rc.6"
   },
-  "_README": "此 package.json 是「方式 B」正式 npm 包迁移的模板骨架。当前 src/host.js 使用 harness.handle（动态插件专用），src/client.js 使用 host.call；迁移时需将 Host 半重写为标准 Cordis 插件（ctx + Services + defineTool），并让 Client 半通过 client runtime 的 RPC 通道通信。详见 install/INSTALL.md。"
+  "peerDependenciesMeta": {
+    "react": { "optional": true },
+    "react-dom": { "optional": true }
+  }
 }
