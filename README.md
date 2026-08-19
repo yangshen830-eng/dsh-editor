@@ -6,7 +6,7 @@
 
 ## 功能
 
-- **文件树**：浏览工作区目录，展开/折叠，Git 状态角标（`M`/`A`/`??`…），点击角标查看 diff。
+- **文件树**：浏览当前工作区目录（自动跟随会话/工作区切换），展开/折叠，Git 状态角标（`M`/`A`/`??`…），点击角标查看 diff。
 - **Monaco 编辑器**：多文件标签页、语法高亮、自动换行/Minimap/字号/Tab 宽度可配置、快捷键可自定义。
 - **跨文件搜索**：基于 ripgrep，流式增量出结果、命中高亮、虚拟滚动（上限 20000 条）、大小写/全字/正则开关、包含/排除 glob、搜索历史、跨文件替换。
 - **Markdown 预览**：源码 / 预览 / 分屏三视图，marked 渲染 + DOMPurify 消毒 + highlight.js 高亮 + mermaid 图表 + KaTeX 公式 + 任务列表勾选。
@@ -58,7 +58,7 @@ dsh-editor/
 DSH 的浏览器 UI 插件由两半组成，通过 npm 包的 `dsh` 字段声明挂载：
 
 - **Host 半**（`lib/index.js`）：标准 Cordis 插件，`inject: ['connection']`，在 `apply` 里用 `ctx.connection.rpc.handle('/editor', handler)` 暴露私有 JSON RPC。`fs:*`（文件读写/列举/项目根/搜索）、`git:*`（状态/diff）各端点走一个 dispatch 表。
-- **Client 半**（`lib/client.js`）：`window.__ModuleLoader__.load(...)` 模块，`require("react")` 拿 React，`inject: ['slots', 'connection', 'timer']`，用 `ctx.connection.rpc.call('/editor', endpoint, payload)` 调 Host，用 `ctx.slots.inject` 注册「文件」标签页与设置页。
+- **Client 半**（`lib/client.js`）：`window.__ModuleLoader__.load(...)` 模块，`require("react")` 拿 React，`inject: ['slots', 'connection', 'timer', 'sessions']`，用 `ctx.connection.rpc.call('/editor', endpoint, payload)` 调 Host，用 `ctx.slots.inject` 注册「文件」标签页与设置页；`sessions` 服务提供当前会话的 `cwd`，作为文件树默认根。
 
 两半之间只传输可 JSON 序列化的数据。
 
